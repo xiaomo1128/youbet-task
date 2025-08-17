@@ -17,7 +17,7 @@ import {
 } from '@/openapi/client'
 
 function createApi<T>(ApiClass: new (...args: any[]) => T): T {
-  return new ApiClass(new Configuration({ basePath: import.meta.env.VITE_BASE_URL }), '', http)
+  return new ApiClass(new Configuration({ basePath: import.meta.env.VITE_BASE_URL }), '/api', http)
 }
 export const taskApi = createApi(TaskApi)
 export const reportApi = createApi(ReportApi)
